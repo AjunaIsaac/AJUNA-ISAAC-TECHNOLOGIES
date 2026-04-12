@@ -1,328 +1,411 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Ajuna Isaac Technologies | Top Mobile & Web Development Company in Uganda</title>
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Ajuna Isaac Technologies is Uganda’s leading software development company. We specialize in iOS, Android, and custom web applications for businesses and startups in Kampala.">
-  <meta name="keywords" content="app development Uganda, mobile app developers Kampala, web development company Uganda, software company Kampala, Ajuna Isaac Technologies">
-  <meta name="author" content="Ajuna Isaac Technologies">
+  <title>Ajuna Isaac Technologies | Enterprise Software & Cloud Solutions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="theme-color" content="#4302b2">
-  <link rel="canonical" href="https://ajunaisaac.com/">
+  <meta name="description" content="Uganda’s premier software development agency. Engineering secure, scalable, and innovative web and mobile applications.">
+  <meta name="theme-color" content="#4C65D6">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Ajuna Isaac Technologies | Leading Mobile and Web App Developers" />
-  <meta property="og:description" content="We build reliable, scalable, and user-friendly web and mobile applications for businesses in Uganda and beyond." />
-  <meta property="og:image" content="images/og-image.jpg" />
-  <meta property="og:site_name" content="Ajuna Isaac Technologies" />
+  <style>
+    /* --- COMBINED BRAND VARIABLES --- */
+    :root {
+      --primary: #4C65D6;    /* Logo Blue */
+      --primary-glow: rgba(76, 101, 214, 0.4);
+      --accent: #8E60B8;     /* Logo Purple */
+      --accent-glow: rgba(142, 96, 184, 0.4);
+      --dark: #0a0f1d;
+      --dark-bg: #0a0f1d;
+      --light-bg: #f4f7fa;
+      --bg-light: #f4f7fa;
+      --text: #1e293b;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --white: #ffffff;
+      --success: #10b981;
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
 
-  <!-- Favicon -->
-  <link href="images/images/favicon.jpg" rel="icon">
+    /* --- GLOBALS & RESET --- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.6; background: var(--white); overflow-x: hidden; }
+    h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+    ul { list-style: none; }
 
-  <!-- CSS Assets -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/plugin.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/responsive.css" rel="stylesheet">
+    /* --- ANIMATIONS (From File 2) --- */
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 0 0 var(--primary-glow); }
+      70% { box-shadow: 0 0 20px 15px rgba(76, 101, 214, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(76, 101, 214, 0); }
+    }
+
+    /* --- NAVIGATION (From File 1) --- */
+    .navbar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 5%; background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000;
+      border-bottom: 1px solid #edf2f7; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    }
+    .logo-container { display: flex; align-items: center; }
+    .logo-desktop { height: 45px; width: auto; display: block; }
+    .logo-mobile { height: 40px; width: auto; display: none; }
+
+    .nav-links { display: flex; gap: 30px; align-items: center; }
+    .nav-links a { font-size: 15px; font-weight: 600; color: var(--text); }
+    .nav-links a:hover { color: var(--primary); }
+    .btn-nav { background: var(--primary); color: white !important; padding: 10px 24px; border-radius: 6px; box-shadow: 0 4px 12px rgba(76, 101, 214, 0.2); }
+    .mobile-menu-btn { display: none; font-size: 24px; cursor: pointer; color: var(--primary); }
+
+    /* --- HERO SECTION (From File 1) --- */
+    .hero {
+      background: linear-gradient(135deg, #f8faff 0%, #eef2ff 100%);
+      padding: 80px 5%;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 50px;
+      min-height: 85vh;
+    }
+    .hero-content h1 { font-size: 52px; color: var(--dark); line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
+    .hero-content h1 span { background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-content p { font-size: 18px; color: var(--text-muted); margin-bottom: 30px; max-width: 600px; }
+    
+    .hero-features { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 40px; }
+    .feature-item { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 14px; color: var(--text); }
+    .feature-item i { color: var(--success); font-size: 18px; }
+
+    .hero-btns { display: flex; gap: 20px; }
+    .btn-main { background: #ff9800; color: white !important; padding: 16px 32px; border-radius: 6px; font-weight: 700; font-size: 16px; box-shadow: 0 4px 14px rgba(255, 152, 0, 0.3); display: inline-flex; align-items: center; gap: 10px; }
+    .btn-sec { background: var(--white); color: var(--primary) !important; border: 1px solid var(--primary); padding: 16px 32px; border-radius: 6px; font-weight: 700; display: inline-flex; align-items: center; }
+
+    .hero-image { position: relative; }
+    .hero-image img { width: 100%; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    .floating-card {
+        position: absolute; bottom: -20px; left: -20px; background: var(--white);
+        padding: 20px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        display: flex; align-items: center; gap: 15px; border-left: 5px solid var(--success);
+    }
+
+    /* --- SECTION GLOBALS (From File 2) --- */
+    .section { padding: 120px 5%; position: relative; }
+    .section-title { text-align: center; margin-bottom: 70px; }
+    .section-title span { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; display: block; margin-bottom: 10px; }
+    .section-title h2 { font-size: 42px; color: var(--text-main); line-height: 1.2; }
+
+    /* --- SERVICES (From File 2) --- */
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; max-width: 1200px; margin: auto; }
+    .service-card { background: var(--white); padding: 50px 40px; border-radius: var(--radius-lg); border: 1px solid #e2e8f0; transition: var(--transition); position: relative; overflow: hidden; z-index: 1; }
+    .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 0%; background: linear-gradient(180deg, rgba(76,101,214,0.05) 0%, transparent 100%); transition: var(--transition); z-index: -1; }
+    .service-card:hover::before { height: 100%; }
+    .service-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 30px 60px rgba(76, 101, 214, 0.08); }
+    .service-icon { width: 70px; height: 70px; margin-bottom: 30px; background: var(--bg-light); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 30px; color: var(--primary); transition: var(--transition); }
+    .service-card:hover .service-icon { background: var(--primary); color: var(--white); animation: pulse-glow 1.5s infinite; }
+    .service-card h3 { font-size: 24px; margin-bottom: 15px; }
+    .service-card p { color: var(--text-muted); font-size: 16px; margin-bottom: 25px; }
+    .service-link { font-weight: 600; color: var(--accent); display: flex; align-items: center; gap: 5px; }
+    .service-link:hover { gap: 10px; color: var(--primary); }
+
+    /* --- BUTTONS (From File 2 - Used in bottom sections) --- */
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 15px 30px; border-radius: 50px; font-weight: 600; font-size: 15px; cursor: pointer; transition: var(--transition); gap: 10px; position: relative; overflow: hidden; z-index: 1; }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent)); color: var(--white) !important; border: none; box-shadow: 0 10px 20px var(--primary-glow); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px var(--accent-glow); }
+
+    /* --- SECURITY SECTION (From File 2) --- */
+    .security-section { background: var(--dark-bg); color: var(--white); padding: 120px 5%; position: relative; overflow: hidden; text-align: center; }
+    .security-section::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 40px 40px; z-index: 0; opacity: 0.3; }
+    .sec-content { position: relative; z-index: 1; max-width: 800px; margin: auto; }
+    .sec-icon { font-size: 60px; color: #10b981; margin-bottom: 20px; text-shadow: 0 0 30px rgba(16, 185, 129, 0.6); }
+    .sec-content h2 { font-size: 46px; margin-bottom: 20px; background: linear-gradient(90deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .sec-content p { font-size: 18px; color: #94a3b8; margin-bottom: 40px; }
+    .sec-features { display: flex; justify-content: center; gap: 30px; margin-bottom: 40px; flex-wrap: wrap; }
+    .sec-feature { background: rgba(255,255,255,0.05); padding: 15px 25px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.1); font-size: 15px; display: flex; align-items: center; gap: 10px; }
+    .sec-feature i { color: var(--primary); }
+
+    /* --- CATEGORIZED TECH STACK (From File 2) --- */
+    .tech-container { max-width: 1200px; margin: auto; display: flex; flex-direction: column; gap: 50px; }
+    .tech-row { background: var(--bg-light); border-radius: var(--radius-lg); padding: 40px; border: 1px solid #e2e8f0; }
+    .tech-row-title { font-size: 20px; font-weight: 700; margin-bottom: 30px; border-left: 4px solid var(--primary); padding-left: 15px; }
+    .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 25px; align-items: center; justify-items: center; }
+    .tech-item { text-align: center; transition: var(--transition); cursor: pointer; }
+    .tech-item:hover { transform: scale(1.1) translateY(-5px); }
+    .tech-item img { width: 55px; height: 55px; margin-bottom: 10px; object-fit: contain; }
+    .tech-item span { display: block; font-size: 13px; font-weight: 600; color: var(--text-muted); transition: var(--transition); }
+    .tech-item:hover span { color: var(--primary); }
+
+    /* --- FOOTER (From File 2) --- */
+    footer { background: var(--dark-bg); color: var(--white); padding: 100px 5% 30px; position: relative; border-top: 5px solid var(--primary); }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; max-width: 1200px; margin: auto; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 60px; }
+    .footer-col h4 { color: var(--white); font-size: 20px; margin-bottom: 25px; }
+    .footer-col p { color: #94a3b8; margin-bottom: 15px; }
+    .footer-col ul li { margin-bottom: 15px; }
+    .footer-col ul li a { color: #94a3b8; transition: var(--transition); }
+    .footer-col ul li a:hover { color: var(--primary); padding-left: 8px; }
+    .footer-logo { max-width: 220px; margin-bottom: 20px; }
+    .copyright { text-align: center; padding-top: 30px; color: #64748b; font-size: 15px; }
+
+    /* --- FLOATING WHATSAPP (From File 2) --- */
+    .wa-float { position: fixed; bottom: 30px; right: 30px; background: linear-gradient(135deg, #25D366, #128C7E); color: white; padding: 16px 28px; border-radius: 50px; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); font-weight: 600; z-index: 999; }
+    .wa-float:hover { transform: scale(1.05) translateY(-5px); box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5); color: white; }
+
+    /* --- RESPONSIVE DESIGN --- */
+    @media (max-width: 992px) {
+      /* Nav Mobile Fix */
+      .logo-desktop { display: none; }
+      .logo-mobile { display: block; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); flex-direction: column; padding: 30px; box-shadow: 0 20px 30px rgba(0,0,0,0.1); border-top: 1px solid #eee; }
+      .nav-links.active { display: flex; }
+      .mobile-menu-btn { display: block; }
+      
+      /* Hero Mobile Fix */
+      .hero { grid-template-columns: 1fr; text-align: center; padding-top: 50px; }
+      .hero-content h1 { font-size: 40px; }
+      .hero-content p { margin: 0 auto 30px; }
+      .hero-features { justify-content: center; grid-template-columns: 1fr; }
+      .hero-btns { justify-content: center; flex-wrap: wrap; }
+    }
+    
+    @media (max-width: 768px) {
+      /* Bottom Sections Mobile Fix */
+      .sec-content h2 { font-size: 32px; }
+      .wa-float span { display: none; }
+      .wa-float { padding: 18px; right: 20px; bottom: 20px; border-radius: 50%; }
+    }
+  </style>
 </head>
-
 <body>
 
-  <!--Start Header -->
-  <header class="header-pr nav-bg-b main-header navfix fixed-top menu-white">
-    <div class="container-fluid m-pad">
-      <div class="menu-header">
-        <div class="dsk-logo">
-          <a class="nav-brand" href="index.html">
-            <!-- Ensure you have a logo.png in your images folder -->
-            <img src="images/logo.jpg" alt="Ajuna Isaac Technologies" class="mega-white-logo" />
-            <img src="images/logo.jpg" alt="Ajuna Isaac Technologies" class="mega-darks-logo" />
-          </a>
-        </div>
-        <div class="custom-nav" role="navigation">
-          <ul class="nav-list">
-            <li><a href="#home" class="menu-links">Home</a></li>
-            <li><a href="#services" class="menu-links">Services</a></li>
-            <li class="sbmenu">
-              <a href="#about" class="menu-links">Company</a>
-              <div class="nx-dropdown">
-                <div class="sub-menu-section">
-                  <div class="container">
-                    <div class="sub-menu-center-block">
-                      <div class="sub-menu-column">
-                        <ul>
-                          <li><a href="about.html">About Us</a></li>
-                          <li><a href="why-us.html">Why Choose Us</a></li>
-                          <li><a href="portfolio.html">Our Portfolio</a></li>
-                          <li><a href="technologies.html">Technologies</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li><a href="contact.html" class="menu-links">Contact Us</a></li>
-            <li><a href="#" class="menu-links right-bddr">&nbsp;</a></li>
-            
-            <li class="contact-show">
-              <a href="#" class="btn-round- trngl btn-br bg-btn"><i class="fas fa-phone-alt"></i></a>
-              <div class="contact-inquiry">
-                <div class="contact-info-">
-                  <div class="contct-heading">Contact Support</div>
-                  <div class="inquiry-card-nn">
-                    <div class="title-inq-c">SALES DEPARTMENT</div>
-                    <ul>
-                      <li><a href="mailto:info@ajunaisaac.com"><i class="fas fa-envelope"></i> info@ajunaisaac.com</a></li>
-                      <li><a href="tel:+256759043238"><i class="fas fa-phone-alt"></i> +256 759 043 238</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li><a href="contact.html" class="btn-br bg-btn3 btshad-b2 lnk">Request A Quote <span class="circle"></span></a> </li>
-          </ul>
-        </div>
-        <div class="mobile-menu2">
-          <ul class="mob-nav2">
-            <li><a href="contact.html" class="btn-round- trngl btn-br bg-btn btshad-b1"><i class="fas fa-envelope-open-text"></i></a></li>
-            <li class="navm-"> <a class="toggle" href="#"><span></span></a></li>
-          </ul>
-        </div>
-      </div>
-      <!--Mobile Menu-->
-      <nav id="main-nav">
-        <ul class="first-nav">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <!--End Header -->
+  <!-- Navigation (From File 1) -->
+  <nav class="navbar">
+    <a href="index.html" class="logo-container">
+      <img src="images/Website header-01.svg" alt="Ajuna Isaac Technologies" class="logo-desktop">
+      <img src="images/Favicon.svg" alt="Ajuna Isaac" class="logo-mobile">
+    </a>
+    
+    <div class="mobile-menu-btn" id="menu-btn"><i class="fas fa-bars"></i></div>
 
-  <!--Start Hero-->
-  <section class="hero-card-web mobile-app-" id="home">
-    <div class="hero-main-rp container-fluid">
-      <div class="row">
-        <div class="col-lg-6 v-center">
-          <div class="hero-heading-sec2 niwax" data-rellax-speed="3">
-            <h1 class="wow fadeIn" data-wow-delay="0.2s">Building Modern Web & Mobile Applications</h1>
-            <p class="wow fadeIn" data-wow-delay="0.4s">Ajuna Isaac Technologies is a software development company focused on building reliable, scalable, and user-friendly digital solutions in Uganda.</p>
-            <div class="content-sec d-flex mt30 v-center text-w wow fadeIn" data-wow-delay="0.6s">
-              <div class="mr25"><a href="contact.html" class="btn-main bg-btn4 lnk">START A PROJECT<i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a></div>
-              <div class="title-hero-oth v-center">
-                <p>See our work</p>
-              </div>
-            </div>
-            <div class="awrd-sec text-w mt40 wow fadeIn" data-wow-delay="0.8s">
-              <h5>Our Technologies</h5>
-              <div class="bages-slider owl-carousel mt20">
-                <!-- Replace with icons relevant to you (Node, React, Kotlin) -->
-                <div class="img-badge-"><a href="#"> <img src="images/icons/badge1.png" alt="Tech 1" class="img100w"></a> </div>
-                <div class="img-badge-"><a href="#"> <img src="images/icons/badge2.png" alt="Tech 2" class="img100w"></a> </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 v-center">
-          <div class="app-hero-bnr wow fadeIn" data-wow-delay="0.4s"> <img src="images/hero/mobile_hero_banner.png" alt="Ajuna Isaac Technologies App Dev" class="img-fluid"> </div>
+    <div class="nav-links" id="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Expertise</a>
+      <a href="#security">Security</a>
+      <a href="#technologies">Tech Stack</a>
+      <a href="contact.html" class="btn-nav">Start a Project</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section (From File 1) -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Building Digital Products That <span>Scale & Inspire</span></h1>
+      <p>Custom software engineering and cloud architectures designed to help businesses grow faster and operate securely.</p>
+      
+      <div class="hero-features">
+        <div class="feature-item"><i class="fas fa-check-circle"></i> Enterprise Security</div>
+        <div class="feature-item"><i class="fas fa-check-circle"></i> 99.9% App Uptime</div>
+        <div class="feature-item"><i class="fas fa-check-circle"></i> Scalable Cloud Infra</div>
+        <div class="feature-item"><i class="fas fa-check-circle"></i> Native Mobile Performance</div>
+        <div class="feature-item"><i class="fas fa-check-circle"></i> 24/7 Technical Support</div>
+        <div class="feature-item"><i class="fas fa-check-circle"></i> Secure API Integrations</div>
+      </div>
+
+      <div class="hero-btns">
+        <a href="contact.html" class="btn-main">Get Started Now <i class="fas fa-arrow-right"></i></a>
+        <a href="#services" class="btn-sec">View Services</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://i0.wp.com/observer.ug/wp-content/uploads/2022/04/Computer-system.jpg?resize=760,507&ssl=1" alt="Development Team">
+      <div class="floating-card">
+        <i class="fas fa-shield-check" style="color: var(--success); font-size: 24px;"></i>
+        <div>
+            <strong style="display:block;">Secure Verified</strong>
+            <small style="color: var(--text-muted);">End-to-End Encryption</small>
         </div>
       </div>
     </div>
   </section>
-  <!--End Hero-->
 
-  <!--Start About-->
-  <section class="about-sec-app pad-tb pt60" id="about">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="common-heading text-l">
-            <h2 class="mb30"><span class="text-second text-bold">Ajuna Isaac Technologies</span> Software Development</h2>
-            <p>
-              We are a premier team of software engineers based in Kampala. We combine technical expertise with creative problem-solving to build products that users love. From complex backend APIs to sleek mobile interfaces, we handle it all.
-            </p>
-            <p class="mt10"> <span class="text-bold">
-                Delivering high-quality digital solutions for businesses and individuals. </span></p>
-          </div>
-          <div class="cta-card mt40">
-            <h3 class="mb30">Have a Project Idea?</h3>
-            <a href="contact.html" class="btn-outline lnk">Contact Us Today<i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="funfact">
-            <div class="row">
-              <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                <div class="funfct srcl1">
-                  <img src="images/icons/startup.svg" alt="Icon">
-                  <span class="services-cuntr counter">5</span><span class="services-cuntr">+</span>
-                  <p>Years Experience</p>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                <div class="funfct srcl2">
-                  <img src="images/icons/team.svg" alt="Icon">
-                  <span class="services-cuntr counter">10</span><span class="services-cuntr">+</span>
-                  <p>Expert Developers</p>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                <div class="funfct srcl3">
-                  <img src="images/icons/mobile.svg" alt="Icon">
-                  <span class="services-cuntr counter">20</span><span class="services-cuntr">+</span>
-                  <p>Projects Done</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  <!-- Services Grid (From File 2) -->
+  <section class="section" id="services">
+    <div class="section-title">
+      <span>Our Expertise</span>
+      <h2>End-to-End Development</h2>
+    </div>
+    <div class="grid-3">
+      <!-- Frontend/Web -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+        <h3>Web Applications</h3>
+        <p>Dynamic, responsive, and high-performance web applications built with modern frontend frameworks.</p>
+        <a href="#" class="service-link">Learn More <i class="fas fa-chevron-right"></i></a>
+      </div>
+      <!-- Mobile -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-mobile-screen-button"></i></div>
+        <h3>Mobile Engineering</h3>
+        <p>Native iOS, Android, and cross-platform apps designed for flawless user experiences and high retention.</p>
+        <a href="#" class="service-link">Learn More <i class="fas fa-chevron-right"></i></a>
+      </div>
+      <!-- Backend/Cloud -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-server"></i></div>
+        <h3>Cloud & Backend</h3>
+        <p>Scalable APIs, secure databases, and cloud infrastructure engineered to handle millions of requests.</p>
+        <a href="#" class="service-link">Learn More <i class="fas fa-chevron-right"></i></a>
       </div>
     </div>
   </section>
-  <!--End About-->
 
-  <!--Start Service-->
-  <section class="service-section-app pad-tb" id="services">
-    <div class="sctxt">Development</div>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-6">
-          <div class="common-heading ptag">
-            <span>What We Do</span>
-            <h2>Our Services</h2>
-            <p class="mb30">Professional websites, web apps, dashboards, and APIs built for performance and scalability.</p>
-          </div>
-        </div>
+  <!-- Security Section (From File 2) -->
+  <section class="security-section" id="security">
+    <div class="sec-content">
+      <div class="sec-icon"><i class="fas fa-shield-halved"></i></div>
+      <h2>Enterprise-Grade Security</h2>
+      <p>In today's digital landscape, security isn't a feature—it's the foundation. We build applications with rigorous security protocols, end-to-end encryption, and compliance at the core of our architecture.</p>
+      
+      <div class="sec-features">
+        <div class="sec-feature"><i class="fas fa-lock"></i> End-to-End Encryption</div>
+        <div class="sec-feature"><i class="fas fa-user-shield"></i> OWASP Top 10 Compliance</div>
+        <div class="sec-feature"><i class="fas fa-database"></i> Secure Data Storage</div>
       </div>
-      <div class="row upset">
-        <div class="col-lg-4 col-md-6 mt30 wow fadeIn" data-wow-delay="0.2s">
-          <div class="service-card-app hoshd">
-            <h4>Mobile App Development</h4>
-            <ul class="-service-list mt10">
-              <li>Android Apps (Kotlin/Java)</li>
-              <li>iOS Apps (Swift)</li>
-              <li>Cross Platform (Flutter)</li>
-            </ul>
-            <div class="tec-icon mt30">
-              <ul class="servc-icon-sldr">
-                <li><a href="#"><div class="img-iconbb"><img src="images/icons/android.svg" alt="img"></div> </a></li>
-                <li><a href="#"><div class="img-iconbb"><img src="images/icons/apple.svg" alt="img"></div> </a></li>
-              </ul>
-            </div>
-            <p class="mt20">We build modern UI and secure backend integration for mobile applications.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mt30 wow fadeIn" data-wow-delay="0.5s">
-          <div class="service-card-app hoshd">
-            <h4>Web Development</h4>
-            <ul class="-service-list mt10">
-              <li>Custom Websites</li>
-              <li>Web Applications</li>
-              <li>Dashboards</li>
-            </ul>
-            <div class="tec-icon mt30">
-              <ul class="servc-icon-sldr">
-                <li><a href="#"><div class="img-iconbb"><img src="images/icons/php.svg" alt="img"></div></a></li>
-                <li><a href="#"><div class="img-iconbb"><img src="images/icons/java.svg" alt="img"></div></a></li>
-              </ul>
-            </div>
-            <p class="mt20">High-performance websites built with the latest web technologies.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mt30 wow fadeIn" data-wow-delay="0.8s">
-          <div class="service-card-app hoshd">
-            <h4>Backend & APIs</h4>
-            <ul class="-service-list mt10">
-              <li>REST APIs</li>
-              <li>Database Design</li>
-              <li>Cloud Integration</li>
-            </ul>
-            <div class="tec-icon mt30">
-              <ul class="servc-icon-sldr">
-                <li><a href="#"><div class="img-iconbb"><img src="images/icons/ux.svg" alt="img"></div></a></li>
-              </ul>
-            </div>
-            <p class="mt20">Secure backend systems, authentication, databases, and cloud integration.</p>
-          </div>
-        </div>
-      </div>
+      
+      <a href="security.html" class="btn btn-primary" style="background: #10b981; box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);">Explore Our Security Architecture</a>
     </div>
   </section>
-  <!--End Service-->
 
-  <!--Start Footer-->
+  <!-- Categorized Technology Stack (From File 2) -->
+  <section class="section" id="technologies">
+    <div class="section-title">
+      <span>Our Arsenal</span>
+      <h2>Technologies We Master</h2>
+    </div>
+    
+    <div class="tech-container">
+      
+      <!-- Frontend Tools -->
+      <div class="tech-row">
+        <div class="tech-row-title">Frontend & Mobile</div>
+        <div class="tech-grid">
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" />
+            <span>React</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js" />
+            <span>Next.js</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="Flutter" />
+            <span>Flutter</span>
+          </div>
+          <div class="tech-item">
+            <img src="images/icons/apple.svg" alt="iOS" />
+            <span>Swift iOS</span>
+          </div>
+          <div class="tech-item">
+            <img src="images/icons/android.svg" alt="Android" />
+            <span>Android</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backend & Cloud Tools -->
+      <div class="tech-row">
+        <div class="tech-row-title">Backend, Database & Cloud</div>
+        <div class="tech-grid">
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="NodeJS" />
+            <span>Node.js</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" />
+            <span>Python</span>
+          </div>
+          <div class="tech-item">
+            <img src="images/icons/java.svg" alt="Java" />
+            <span>Java</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" />
+            <span>MySQL</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" style="width: 70px;" />
+            <span>AWS</span>
+          </div>
+          <div class="tech-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure" />
+            <span>Azure</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Footer (From File 2) -->
   <footer>
-    <div class="footer-row2">
-      <div class="container">
-        <div class="row justify-content-between">
-          <div class="col-lg-3 col-sm-6 ftr-brand-pp">
-            <a class="navbar-brand mt30 mb25" href="#"> <img src="images/logo.jpg" alt="Ajuna Isaac Technologies" width="100" /></a>
-            <p>Ajuna Isaac Technologies focuses on delivering high-quality digital solutions for businesses and individuals.</p>
-            <a href="contact.html" class="btn-main bg-btn3 lnk mt20">Contact Us <i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <h5>Contact Info</h5>
-            <ul class="footer-address-list ftr-details">
-              <li>
-                <span><i class="fas fa-envelope"></i></span>
-                <p>Email <span> <a href="mailto:info@ajunaisaac.com">info@ajunaisaac.com</a></span></p>
-              </li>
-              <li>
-                <span><i class="fas fa-phone-alt"></i></span>
-                <!-- Update with your actual number -->
-                <p>Phone <span> <a href="tel:+256759043238">+256 759 043 238</a></span></p>
-              </li>
-              <li>
-                <span><i class="fas fa-map-marker-alt"></i></span>
-                <p>Address <span> Kampala, Uganda</span></p>
-              </li>
-            </ul>
-          </div>
-        </div>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="images/Website header-01.svg" alt="Ajuna Isaac" class="footer-logo">
+        <p>Architecting scalable, secure, and innovative digital solutions for businesses ready to dominate their industry.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><i class="fas fa-envelope" style="color: var(--primary); margin-right: 10px;"></i> info@ajunaisaac.com</li>
+          <li><i class="fas fa-phone-alt" style="color: var(--primary); margin-right: 10px;"></i> +256 759 043 238</li>
+          <li><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right: 10px;"></i> Kampala, Uganda</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#services">Our Expertise</a></li>
+          <li><a href="security.html">Security Standards</a></li>
+          <li><a href="#technologies">Tech Stack</a></li>
+          <li><a href="contact.html">Request a Quote</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-row3">
-      <div class="copyright">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="footer-">
-                <p>Copyright &copy; 2026 Ajuna Isaac Technologies. All rights reserved. </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="copyright">
+      &copy; 2024 Ajuna Isaac Technologies. All Rights Reserved.
     </div>
   </footer>
-  <!--End Footer-->
 
-  <!-- WhatsApp Float -->
-  <a href="https://wa.me/256759043238" target="_blank" rel="noopener noreferrer" style="position: fixed; bottom: 20px; left: 20px; background-color: #25D366; color: white; font-family: 'Segoe UI', sans-serif; font-size: 15px; padding: 12px 18px; border-radius: 50px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); text-decoration: none; display: flex; align-items: center; z-index: 9999;">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20" style="margin-right: 8px; fill: white;">
-      <path d="M16.01 2.001c-7.732 0-14 6.268-14 14 0 2.471.645 4.872 1.872 7.002l-1.924 7.006 7.187-1.88c1.992 1.086 4.236 1.64 6.865 1.64 7.732 0 14-6.268 14-14s-6.268-14-14-14zm0 2c6.617 0 12 5.383 12 12s-5.383 12-12 12c-2.241 0-4.194-.583-5.962-1.638l-.432-.254-4.188 1.096 1.12-4.075-.281-.441c-1.139-1.785-1.757-3.867-1.757-5.688 0-6.617 5.383-12 12-12zm-2.23 6c-.356-.008-.706.107-1 .364-.656.574-1.186 1.398-1.219 2.244-.034.88.309 1.643.75 2.344.684 1.076 1.6 2.008 2.625 2.75.62.45 1.398.982 2.219 1 .789.02 1.545-.31 2.156-.75.512-.363 1.131-.793 1.063-1.469-.045-.434-.24-.859-.563-1.125l-1.281-1.063c-.277-.23-.695-.254-1-.063l-.75.469a.241.241 0 01-.25 0c-.516-.277-1.031-.793-1.5-1.375s-.879-1.258-1.125-1.75a.251.251 0 01.062-.281l.594-.625c.277-.287.371-.707.25-1.094l-.5-1.594c-.148-.473-.523-.805-.938-.813z" />
-    </svg>
-    Speak to Us
+  <!-- WhatsApp Float (From File 2) -->
+  <a href="https://wa.me/256759043238" class="wa-float" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp" style="font-size: 24px;"></i>
+    <span>Let's Discuss Your Project</span>
   </a>
 
-  <!-- JS Scripts -->
-  <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/plugin.min.js"></script>
-  <script src="js/main.js"></script>
+  <!-- Mobile Menu JS -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.getElementById('nav-links');
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      const icon = menuBtn.querySelector('i');
+      if(navLinks.classList.contains('active')){
+        icon.classList.replace('fa-bars', 'fa-times');
+      } else {
+        icon.classList.replace('fa-times', 'fa-bars');
+      }
+    });
+  </script>
 
 </body>
 </html>
