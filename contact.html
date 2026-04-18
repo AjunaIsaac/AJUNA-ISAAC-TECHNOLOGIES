@@ -64,6 +64,11 @@
       list-style: none;
     }
 
+    .hidden {
+      display: none;
+    }
+
+    /* --- NAVIGATION --- */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -118,6 +123,7 @@
       color: var(--primary);
     }
 
+    /* --- BUTTONS --- */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -145,6 +151,7 @@
       box-shadow: 0 15px 30px var(--accent-glow);
     }
 
+    /* --- CONTACT HERO --- */
     .contact-hero {
       background: var(--white);
       padding: 100px 5% 60px;
@@ -192,6 +199,7 @@
       color: var(--text-muted);
     }
 
+    /* --- CONTACT LAYOUT --- */
     .contact-wrapper {
       max-width: 1200px;
       margin: 0 auto 100px;
@@ -263,6 +271,7 @@
       color: var(--primary);
     }
 
+    /* --- CONTACT FORM --- */
     .contact-form-container {
       background: var(--white);
       padding: 50px;
@@ -314,6 +323,7 @@
       gap: 20px;
     }
 
+    /* --- FOOTER --- */
     footer {
       background: var(--dark-bg);
       color: var(--white);
@@ -369,6 +379,7 @@
       font-size: 15px;
     }
 
+    /* --- FLOATING WHATSAPP --- */
     .wa-float {
       position: fixed;
       bottom: 30px;
@@ -391,10 +402,7 @@
       color: white;
     }
 
-    .hidden {
-      display: none;
-    }
-
+    /* --- RESPONSIVE DESIGN --- */
     @media (max-width: 992px) {
       .contact-wrapper {
         grid-template-columns: 1fr;
@@ -494,7 +502,9 @@
         <div class="info-details">
           <h4>Email Us</h4>
           <p>Drop us a line anytime. We usually reply within 24 hours.</p>
-          <a href="mailto:info@ajunaisaac.com" style="display:block; margin-top:8px; font-weight:600; color:var(--text-main);">info@ajunaisaac.com</a>
+          <a href="mailto:info@ajunaisaac.com" style="display:block; margin-top:8px; font-weight:600; color:var(--text-main);">
+            info@ajunaisaac.com
+          </a>
         </div>
       </div>
 
@@ -503,7 +513,9 @@
         <div class="info-details">
           <h4>Call Us</h4>
           <p>Need immediate assistance? Give our team a call.</p>
-          <a href="tel:+256759043238" style="display:block; margin-top:8px; font-weight:600; color:var(--text-main);">+256 759 043 238</a>
+          <a href="tel:+256759043238" style="display:block; margin-top:8px; font-weight:600; color:var(--text-main);">
+            +256 759 043 238
+          </a>
         </div>
       </div>
 
@@ -527,6 +539,7 @@
         <input type="hidden" name="access_key" value="52dfaa47-5f5d-4f6c-abaa-1f32ae38746f">
         <input type="hidden" name="subject" value="New Contact Message - Ajuna Isaac Technologies">
         <input type="hidden" name="from_name" value="Ajuna Isaac Technologies Website">
+        <input type="hidden" name="redirect" value="https://ajunaisaac.com/thank-you.html">
         <input type="checkbox" name="botcheck" class="hidden">
 
         <div class="form-row">
@@ -534,15 +547,11 @@
             <label class="form-label" for="first_name">First Name</label>
             <input type="text" id="first_name" name="first_name" class="form-control" placeholder="John" required>
           </div>
+
           <div class="form-group">
             <label class="form-label" for="last_name">Last Name</label>
             <input type="text" id="last_name" name="last_name" class="form-control" placeholder="Doe" required>
           </div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="name">Full Name</label>
-          <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
         </div>
 
         <div class="form-group">
@@ -576,7 +585,6 @@
         </button>
       </form>
     </div>
-
   </div>
 
   <!-- Footer -->
@@ -586,6 +594,7 @@
         <img src="images/Website header-01.svg" alt="Ajuna Isaac" class="footer-logo">
         <p>Architecting scalable, secure, and innovative digital solutions for businesses ready to dominate their industry.</p>
       </div>
+
       <div class="footer-col">
         <h4>Contact Us</h4>
         <ul>
@@ -594,6 +603,7 @@
           <li><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right: 10px;"></i> Kampala, Uganda</li>
         </ul>
       </div>
+
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
@@ -604,6 +614,7 @@
         </ul>
       </div>
     </div>
+
     <div class="copyright">
       &copy; 2024 Ajuna Isaac Technologies. All Rights Reserved.
     </div>
