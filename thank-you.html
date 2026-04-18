@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Thank You | Ajuna Isaac Technologies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Thank you for contacting Ajuna Isaac Technologies. Your message has been received.">
+  <meta name="theme-color" content="#4C65D6">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #4C65D6;
+      --primary-glow: rgba(76, 101, 214, 0.4);
+      --accent: #8E60B8;
+      --accent-glow: rgba(142, 96, 184, 0.4);
+      --dark-bg: #0a0f1d;
+      --bg-light: #f4f7fa;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --white: #ffffff;
+      --success: #10b981;
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-main);
+      line-height: 1.7;
+      background: var(--bg-light);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #edf2f7;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-desktop {
+      height: 45px;
+      width: auto;
+      display: block;
+    }
+
+    .logo-mobile {
+      height: 40px;
+      width: auto;
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      transition: var(--transition);
+      gap: 10px;
+      outline: none;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: var(--white) !important;
+      box-shadow: 0 10px 20px var(--primary-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px var(--accent-glow);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--text-main) !important;
+      border: 1px solid #dbe3ee;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      border-color: var(--primary);
+      color: var(--primary) !important;
+    }
+
+    .thank-you-section {
+      min-height: calc(100vh - 90px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 5%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .thank-you-section::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: -100px;
+      width: 320px;
+      height: 320px;
+      background: var(--primary);
+      opacity: 0.08;
+      filter: blur(120px);
+      border-radius: 50%;
+    }
+
+    .thank-you-section::after {
+      content: '';
+      position: absolute;
+      bottom: -120px;
+      right: -100px;
+      width: 320px;
+      height: 320px;
+      background: var(--accent);
+      opacity: 0.08;
+      filter: blur(120px);
+      border-radius: 50%;
+    }
+
+    .thank-you-card {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      width: 100%;
+      background: var(--white);
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-lg);
+      padding: 60px 40px;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.06);
+    }
+
+    .success-icon {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 25px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(16, 185, 129, 0.12);
+      color: var(--success);
+      font-size: 40px;
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15);
+    }
+
+    .thank-you-card h1 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.15;
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
+
+    .thank-you-card h1 span {
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .thank-you-card p {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 16px;
+    }
+
+    .thank-you-note {
+      margin-top: 28px;
+      background: var(--bg-light);
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: left;
+    }
+
+    .thank-you-note h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .thank-you-note p {
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+
+    .action-buttons {
+      margin-top: 35px;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      background: var(--dark-bg);
+      color: var(--white);
+      padding: 100px 5% 30px;
+      position: relative;
+      border-top: 5px solid var(--primary);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 50px;
+      max-width: 1200px;
+      margin: auto;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 60px;
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    .footer-col p {
+      color: #94a3b8;
+      margin-bottom: 15px;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 15px;
+    }
+
+    .footer-col ul li a {
+      color: #94a3b8;
+      transition: var(--transition);
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--primary);
+      padding-left: 8px;
+    }
+
+    .footer-logo {
+      max-width: 220px;
+      margin-bottom: 20px;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      color: #64748b;
+      font-size: 15px;
+    }
+
+    .wa-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      padding: 16px 28px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+      font-weight: 600;
+      z-index: 999;
+    }
+
+    .wa-float:hover {
+      transform: scale(1.05) translateY(-5px);
+      box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
+      color: white;
+    }
+
+    @media (max-width: 992px) {
+      .logo-desktop {
+        display: none;
+      }
+
+      .logo-mobile {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 30px;
+        box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        border-top: 1px solid #eee;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .thank-you-card {
+        padding: 45px 24px;
+      }
+
+      .wa-float span {
+        display: none;
+      }
+
+      .wa-float {
+        padding: 18px;
+        right: 20px;
+        bottom: 20px;
+        border-radius: 50%;
+      }
+
+      .action-buttons {
+        flex-direction: column;
+      }
+
+      .action-buttons a {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="logo-container">
+      <img src="images/Website header-01.svg" alt="Ajuna Isaac Technologies" class="logo-desktop">
+      <img src="images/Favicon.svg" alt="Ajuna Isaac" class="logo-mobile">
+    </a>
+
+    <div class="mobile-menu-btn" id="menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="nav-links" id="nav-links">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#services">Expertise</a>
+      <a href="security.html">Security Logic</a>
+      <a href="index.html#technologies">Tech Stack</a>
+      <a href="contact.html" class="btn btn-primary" style="color: white; padding: 10px 24px;">Start a Project</a>
+    </div>
+  </nav>
+
+  <!-- Thank You Section -->
+  <section class="thank-you-section">
+    <div class="thank-you-card">
+      <div class="success-icon">
+        <i class="fas fa-check"></i>
+      </div>
+
+      <h1>Thank You for <span>Reaching Out</span></h1>
+      <p>Your message has been sent successfully to our team.</p>
+      <p>We appreciate your interest in Ajuna Isaac Technologies and will get back to you as soon as possible.</p>
+
+      <div class="thank-you-note">
+        <h3>What happens next?</h3>
+        <p>Our team will review your message and respond through email or phone, depending on the contact details you provided. We usually reply within 24 hours.</p>
+      </div>
+
+      <div class="action-buttons">
+        <a href="index.html" class="btn btn-primary">
+          <i class="fas fa-house"></i>
+          Back to Home
+        </a>
+        <a href="contact.html" class="btn btn-secondary">
+          <i class="fas fa-envelope"></i>
+          Send Another Message
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="images/Website header-01.svg" alt="Ajuna Isaac" class="footer-logo">
+        <p>Architecting scalable, secure, and innovative digital solutions for businesses ready to dominate their industry.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><i class="fas fa-envelope" style="color: var(--primary); margin-right: 10px;"></i> info@ajunaisaac.com</li>
+          <li><i class="fas fa-phone-alt" style="color: var(--primary); margin-right: 10px;"></i> +256 759 043 238</li>
+          <li><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right: 10px;"></i> Kampala, Uganda</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#services">Our Expertise</a></li>
+          <li><a href="security.html">Security Standards</a></li>
+          <li><a href="index.html#technologies">Tech Stack</a></li>
+          <li><a href="contact.html">Request a Quote</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="copyright">
+      &copy; 2024 Ajuna Isaac Technologies. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/256759043238" class="wa-float" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp" style="font-size: 24px;"></i>
+    <span>Let's Discuss Your Project</span>
+  </a>
+
+  <!-- Mobile Menu JS -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.getElementById('nav-links');
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      const icon = menuBtn.querySelector('i');
+
+      if (navLinks.classList.contains('active')) {
+        icon.classList.replace('fa-bars', 'fa-times');
+      } else {
+        icon.classList.replace('fa-times', 'fa-bars');
+      }
+    });
+  </script>
+
+</body>
+</html>
